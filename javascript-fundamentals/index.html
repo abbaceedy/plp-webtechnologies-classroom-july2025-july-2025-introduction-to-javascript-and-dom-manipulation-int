@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time-Aware Smart Greeting Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-clock"></i> Time-Aware Smart Greeting Dashboard</h1>
+            <p class="subtitle">A dynamic dashboard that changes based on time and your interactions</p>
+        </header>
+
+        <main>
+            <div class="dashboard-grid">
+                <!-- Time and Greeting Section -->
+                <section class="card greeting-card">
+                    <h2><i class="fas fa-sun"></i> Greeting & Time</h2>
+                    <div class="time-display">
+                        <div id="current-time" class="current-time">Loading...</div>
+                        <div id="current-date" class="current-date"></div>
+                    </div>
+                    <div id="greeting-message" class="greeting-message">Good day!</div>
+                    <div class="time-of-day">
+                        <div class="time-period active" data-period="morning">Morning (5AM-12PM)</div>
+                        <div class="time-period" data-period="afternoon">Afternoon (12PM-5PM)</div>
+                        <div class="time-period" data-period="evening">Evening (5PM-9PM)</div>
+                        <div class="time-period" data-period="night">Night (9PM-5AM)</div>
+                    </div>
+                </section>
+
+                <!-- Interaction Counter Section -->
+                <section class="card interaction-card">
+                    <h2><i class="fas fa-mouse-pointer"></i> Interaction Tracker</h2>
+                    <p class="card-description">Click buttons to track your activity</p>
+                    
+                    <div class="counter-display">
+                        <div class="counter">
+                            <h3>Total Interactions</h3>
+                            <div id="total-counter" class="counter-value">0</div>
+                        </div>
+                        <div class="counter">
+                            <h3>Current Session</h3>
+                            <div id="session-counter" class="counter-value">0</div>
+                        </div>
+                    </div>
+                    
+                    <div class="button-group">
+                        <button id="like-btn" class="interaction-btn">
+                            <i class="fas fa-thumbs-up"></i> Like
+                        </button>
+                        <button id="comment-btn" class="interaction-btn">
+                            <i class="fas fa-comment"></i> Comment
+                        </button>
+                        <button id="share-btn" class="interaction-btn">
+                            <i class="fas fa-share"></i> Share
+                        </button>
+                    </div>
+                    
+                    <div class="reset-section">
+                        <button id="reset-btn" class="reset-btn">
+                            <i class="fas fa-redo"></i> Reset Dashboard
+                        </button>
+                        <p class="reset-hint">This will reset all counters and logs</p>
+                    </div>
+                </section>
+
+                <!-- Activity Log Section -->
+                <section class="card log-card">
+                    <h2><i class="fas fa-history"></i> Activity Log</h2>
+                    <p class="card-description">Recent interactions and time updates</p>
+                    
+                    <div class="log-controls">
+                        <button id="clear-log-btn" class="secondary-btn">
+                            <i class="fas fa-trash"></i> Clear Log
+                        </button>
+                        <div class="log-count">
+                            <span id="log-count">0</span> log entries
+                        </div>
+                    </div>
+                    
+                    <div id="activity-log" class="activity-log">
+                        <div class="log-entry welcome">
+                            <span class="log-time">Just now</span>
+                            <span class="log-message">Welcome to the Time-Aware Dashboard!</span>
+                        </div>
+                        <div class="log-entry system">
+                            <span class="log-time">Just now</span>
+                            <span class="log-message">System initialized. Time-based greeting is active.</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Time-Based Messages Section -->
+                <section class="card message-card">
+                    <h2><i class="fas fa-comment-alt"></i> Time-Based Messages</h2>
+                    <p class="card-description">Messages that change based on time of day</p>
+                    
+                    <div id="dynamic-message" class="dynamic-message">
+                        Loading time-based message...
+                    </div>
+                    
+                    <div class="message-tips">
+                        <h3><i class="fas fa-lightbulb"></i> Time-Based Tips:</h3>
+                        <ul id="time-tips">
+                            <li>Morning: A great time to plan your day!</li>
+                            <li>Afternoon: Stay hydrated and take breaks.</li>
+                            <li>Evening: Perfect for reflection.</li>
+                            <li>Night: Time to rest and recharge.</li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <footer>
+            <p>Time-Aware Smart Greeting Dashboard &bull; Demonstrating time-based logic and user interactions</p>
+            <p class="footer-note">All data is stored locally in the browser and resets when you refresh the page</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
